@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Breadcrumb/>
     <router-view/>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import Breadcrumb from '@/components/Breadcrumb.vue'; // @ is an alias to /src
+import Login from './views/Login.vue';
+@Component({
+  components: {
+    Breadcrumb,
+  },
+})
+export default class Home extends Vue {}
+</script>
 
 <style lang="scss">
 #app {
